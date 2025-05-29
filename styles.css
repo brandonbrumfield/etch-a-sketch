@@ -1,4 +1,50 @@
 
+.page {
+    display: flex; 
+    flex-direction: column;
+    height: 100%;
+}
+
+.banner {
+    display:flex;
+    background-color: black;
+    flex: 1 1 150px;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner_title {
+    color: orange;
+}
+
+.middle {
+    display: flex;
+    border: 1px solid red;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.button_container {
+    border: 1px solid red;
+    height: 500px;
+    width: 200px;
+    margin-top: 150px;
+}
+
+.button {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    font-size: 25px;
+    justify-content: center;
+    align-items: center;
+    color: orange;
+    cursor: pointer;
+}
 
 .container {
     display: flex;
@@ -6,7 +52,9 @@
     flex-wrap: wrap;
     width: 500px;
     height: 500px;
-    margin: 0 auto;
+    margin-top: 50px;
+    margin-right: 15%;
+    flex-shrink: 0;
 
 }
 
