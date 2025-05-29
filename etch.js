@@ -41,6 +41,10 @@ const container = document.querySelector("#container");
 
 
 const button_one = document.querySelector("#button_one")
+const button_two = document.querySelector("#button_two")
+const button_three = document.querySelector("#button_three")
+const button_four = document.querySelector("#button_four")
+
 button_one.textContent = "Change Size";
 
 //Upon clicking the "Change Size" button, allow user to enter size for the grid, so long as it is under 100x100.
@@ -54,6 +58,13 @@ button_one.addEventListener("click", () => {
     }
 
     else if (size > 100) {alert("ERROR: you probably tried to exceed 100.")}
+
+})
+
+//Allow user to clear entire grid.
+button_four.addEventListener("click", () => {
+    container.innerHTML = '';
+    addBox(size)
 
 })
 
