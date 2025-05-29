@@ -11,7 +11,11 @@ function addBox(num) {
         
         box.addEventListener("mousedown", () => {
             mousedown = true;
-            box.style.backgroundColor = "black";
+            if (eraser == true) {
+                box.style.backgroundColor = "transparent";
+            }
+            
+            else {box.style.backgroundColor = selected_color;}
             
         })
 
@@ -20,9 +24,11 @@ function addBox(num) {
         })
 
         box.addEventListener("mouseover", () => {
-            if (mousedown) {
-                box.style.backgroundColor = "black";
-            };
+            if (mousedown && eraser) {
+                box.style.backgroundColor = "transparent";
+            }
+
+            else if (mousedown) {box.style.backgroundColor = selected_color;}
 
             
         })
@@ -33,6 +39,8 @@ function addBox(num) {
 } 
 
 let size = 16;
+let eraser = false;
+let selected_color = "black";
 
 
 
@@ -41,9 +49,15 @@ const container = document.querySelector("#container");
 
 
 const button_one = document.querySelector("#button_one")
-const button_two = document.querySelector("#button_two")
 const button_three = document.querySelector("#button_three")
 const button_four = document.querySelector("#button_four")
+
+const color_button = document.querySelector("#color_options");
+
+const black_button = document.querySelector("#black")
+const red_button = document.querySelector("#red")
+const green_button = document.querySelector("#green")
+const blue_button = document.querySelector("#blue")
 
 button_one.textContent = "Change Size";
 
@@ -67,6 +81,37 @@ button_four.addEventListener("click", () => {
     addBox(size)
 
 })
+
+//Allow user to activate an eraser. 
+button_three.addEventListener("click", () => {
+    if (eraser == false) {
+        eraser = true;
+        button_three.textContent = "Eraser: On"
+    }
+
+    else {eraser = false; button_three.textContent = "Eraser: Off"}
+})
+
+//Allow user to select a color. Could likely be cleaned up using event delegation.
+black_button.addEventListener("click", () => {
+    selected_color = "black";
+})
+
+red_button.addEventListener("click", () => {
+    selected_color = "red";
+})
+
+
+green_button.addEventListener("click", () => {
+    selected_color = "green";
+})
+
+blue_button.addEventListener("click", () => {
+    selected_color = "blue";
+})
+
+
+
 
 
 //Create initial grid with size of 16x16.
