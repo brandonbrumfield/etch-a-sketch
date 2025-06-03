@@ -64,7 +64,7 @@ function addBox(num) {
 } 
 
 function randomColor() {
-    return `rgb(${(Math.random() * 250)},${(Math.random() * 250)},${(Math.random() * 250)})`;
+    return `rgb(${(Math.random() * 255)},${(Math.random() * 255)},${(Math.random() * 255)})`;
 }
 
 let size = 16;
