@@ -21,7 +21,7 @@ function addBox(num) {
                 box.style.backgroundColor = "transparent";
             }
 
-            if (random == true) {
+            else if (random == true) {
                 selected_color = randomColor();
                 box.style.backgroundColor = selected_color;
             }
@@ -44,7 +44,7 @@ function addBox(num) {
                 box.style.backgroundColor = "transparent";
             }
 
-            if (mousedown && random) {
+            else if (mousedown && random) {
                 selected_color = randomColor();
                 box.style.backgroundColor = selected_color;
             }
